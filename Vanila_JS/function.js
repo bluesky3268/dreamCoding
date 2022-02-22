@@ -50,9 +50,10 @@ printAll("Apple", "Grape", "PineApple");
 // early return이 좋은 코드!!
 function upgradeUser(user) {
   if (user.point <= 10) {
-    return;
+    return 0;
   }
   // if문에 해당하지 않는 경우 로직...
+  return 1;
 }
 
 // First-class function
