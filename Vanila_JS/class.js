@@ -70,3 +70,58 @@ const article2 = new Article(2);
 console.log(article1.publisher);
 console.log(Article.publisher);
 Article.printPublisher();
+
+
+// 5. Inheritance
+class Shape {
+    constructor(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
+
+    draw() {
+        console.log(`draw ${this.color}`);
+    }
+
+    getArea() {
+        return this.width * this.height;
+    }
+}
+
+class Rectangle extends Shape {
+
+}
+
+class Triangle extends Shape {
+
+    draw() {
+        console.log("TRIANGLE");
+    }
+
+    getArea() {
+        return (this.width * this.height) / 2;
+    }
+
+    toString() {
+        console.log(`width : ${this.width}, height : ${this.height}, color : ${this.color}`);
+    }
+
+}
+const rec = new Rectangle(20, 20, "blue");
+rec.draw();
+console.log(rec.getArea());
+const tri = new Triangle(30, 30, "red");
+tri.draw();
+console.log(tri.getArea());
+tri.toString();
+
+// 6. Class check
+console.log(rec instanceof Rectangle);
+console.log(rec instanceof Triangle);
+console.log(rec instanceof Shape);
+console.log(rec instanceof Object);
+console.log(tri instanceof Rectangle);
+console.log(tri instanceof Triangle);
+console.log(tri instanceof Shape);
+console.log(tri instanceof Object);
