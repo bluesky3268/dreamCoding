@@ -46,3 +46,53 @@ function printAll(...args) {
   args.forEach((arg) => console.log(`forEach : ${arg}`));
 }
 printAll("Apple", "Grape", "PineApple");
+
+// early return이 좋은 코드!!
+function upgradeUser(user) {
+  if (user.point <= 10) {
+    return;
+  }
+  // if문에 해당하지 않는 경우 로직...
+}
+
+// First-class function
+// anonymous function을 사용
+const print = function () {
+  console.log("print");
+};
+print();
+const printAgain = print;
+printAgain();
+
+// Call-back func
+function randomQuiz(ans, printY, printN) {
+  if (ans === "Hi") {
+    printY();
+    return;
+  }
+  printN();
+}
+const printY = function () {
+  console.log("YES");
+}
+const printN = function () {
+  console.log("NO");
+};
+randomQuiz("HI", printY, printN);
+
+// Arrow func
+const simplePrint = function () {
+  console.log("simplePrint");
+};
+// const simplePrint = () => console.log("simplePrint!!");
+simplePrint();
+
+const multiply = (a, b) => {
+  return a * b;
+}
+console.log(`5 x 5 = ${multiply(5, 5)}`);
+
+//IIFE : Immediately Invoked Function Expression
+(function hello() {
+  console.log("IIFE");
+})();
