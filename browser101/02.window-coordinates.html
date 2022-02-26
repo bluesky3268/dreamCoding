@@ -55,13 +55,13 @@
         const scrollTo = document.querySelector(".scroll-to");
         const scrollInto = document.querySelector(".scroll-into");
 
-        scrollBy.addEventListener("click", (event) => {
+        scrollBy.addEventListener("click", () => {
             window.scrollBy(0, 100);
         });
-        scrollTo.addEventListener("click", (event) => {
+        scrollTo.addEventListener("click", () => {
             window.scrollTo(0, 100);
         });
-        scrollInto.addEventListener("click", (event) =>{
+        scrollInto.addEventListener("click", () =>{
             special.scrollIntoView();
         });
     </script>
