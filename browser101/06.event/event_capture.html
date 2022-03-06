@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Capture</title>
+</head>
+<body>
+<div class="outer">
+    <div class="middle">
+        <button>CLICK</button>
+    </div>
+</div>
+<script>
+    const outer = document.querySelector('.outer');
+    const middle = document.querySelector('.middle');
+    const button = document.querySelector('button');
+
+    outer.addEventListener('click', event => {
+        // 내가 관심있는 target일 때만 코드 동작
+        if (event.target !== event.currentTarget) {
+            return;
+        }
+        console.log(`outer : ${event.currentTarget}, ${event.target}`);
+    });
+    middle.addEventListener('click', event => {
+        console.log(`middle : ${event.currentTarget}, ${event.target} `);
+    });
+    button.addEventListener('click', event => {
+        console.log(`button1 : ${event.currentTarget}, ${event.target}`);
+        // !! stopPropagation, stopImmediatePropagation -> 위험하고 안좋기 때문에 사용하지 않는 것이 좋음 !!
+        // 부모 쪽에서 내가 관심이 있을 때만 처리하는 코드를 짜야 함
+        // event.stopPropagation();
+        // event.stopImmediatePropagation();
+    });
+    button.addEventListener('click', event => {
+        console.log(`button2 : ${event.currentTarget}, ${event.target}`);
+    });
+
+</script>
+</body>
+</html>

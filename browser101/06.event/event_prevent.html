@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Prevent</title>
+    <style>
+        div {
+            background-color: green;
+            width: 360px;
+            height: 360px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type = 'checkbox'/>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        document.addEventListener('wheel', event => {
+            console.log('scrolling');
+        });
+        const checkbox = document.querySelector('input');
+        checkbox.addEventListener('click', event => {
+            console.log('checked');
+            // preventDefault() : 브라우저의 행동이 무시됨(여기서는 체크박스의 이벤트인 체크표시가 무시되서 작동하지 않음)
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
