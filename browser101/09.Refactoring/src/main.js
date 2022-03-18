@@ -11,10 +11,6 @@ const gameBtn = document.querySelector('.game-btn');
 const gameTimer = document.querySelector('.timer');
 const gameScore = document.querySelector('.score');
 
-const popUp = document.querySelector('.popup');
-const popUpText = document.querySelector('.popup-msg');
-const popUpRefresh = document.querySelector('.popup-refresh');
-
 const carrotSound = new Audio('./sound/carrot_pull.mp3');
 const alertSound = new Audio('./sound/alert.wav');
 const bgSound = new Audio('./sound/bg.mp3');
@@ -40,7 +36,6 @@ gameBtn.addEventListener('click', () => {
 
 popUpRefresh.addEventListener('click', () => {
     startGame();
-    hidePopup();
 });
 
 function onFieldClick(event) {
@@ -157,8 +152,8 @@ function initGame() {
     field.innerHTML = '';
     gameScore.innerText = CARROT_COUNT;
     // console.log(fieldRect);
-    addItems('carrot', CARROT_COUNT, 'img/carrot.png');
-    addItems('bug', BUG_COUNT, 'img/bug.png');
+    addItems('carrot', CARROT_COUNT, 'src/img/carrot.png');
+    addItems('bug', BUG_COUNT, 'src/img/bug.png');
 }
 
 function addItems(className, count, imgPath) {

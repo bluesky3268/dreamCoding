@@ -17,7 +17,10 @@
     </div>
     <ul class="items"></ul>
     <footer class="footer">
-        <input type="text" class="footer_input">
+        <input type="text" class="footer_input"
+               onfocus="this.placeholder=''"
+               placeholder="구매할 상품을 입력하세요."
+               onblur="this.placeholder='구매할 상품을 입력하세요.'">
         <button class="footer_btn">
             <i class="fas fa-plus"></i>
         </button>
